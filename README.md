@@ -61,4 +61,4 @@ Error handling for API requests to improve user experience.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/SatyarthBanerjee/JobTaskManagerFrontend.git
