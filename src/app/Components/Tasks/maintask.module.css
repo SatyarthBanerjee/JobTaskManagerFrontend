@@ -2,7 +2,11 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    gap: 130px
+    gap: 130px;
+    overflow-y: scroll;
+}
+.maintask::-webkit-scrollbar{
+    display: none;
 }
 .todolist{
     height: 100vh;
