@@ -1,0 +1,38 @@
+.maintask{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    gap: 130px
+}
+.todolist{
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+    /* background-color: #F9DADA; */
+}
+.progresslist{
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+    /* background-color: #D6E6FD; */
+}
+.completed{
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+    /* background-color: #E1FEE7; */
+}
+.completed h4{
+    color: var(--Primary-Back, #1E1E1E);
+font-family: "SF Pro Display";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}

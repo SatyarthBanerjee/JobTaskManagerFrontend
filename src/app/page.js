@@ -1,95 +1,43 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
+"use client"
+import React, { useContext, useState } from 'react'
+import style from "./page.module.css"
+import { AuthContext } from './ContextAPIs/authcontext'
+const page = () => {
+  const [logindet, setlogindet] = useState({
+    usernameoremail: "",
+    password: "",
+  })
+  const {login, signup} = useContext(AuthContext)
+  const handleChange = (value, name)=>{
+    setlogindet((prevValue)=>{
+      return {...prevValue, [name]: value}
+    })
+  }
+  const handleLogin = ()=>{
+    if(logindet){
+      login(logindet)
+    }
+  }
+  const handleSignup = ()=>{
+    if(logindet){
+      signup(logindet)
+    }
+  }
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div className={style.loginmain}>
+      <div className={style.loginBox}>
+        <h4>Welcome to Task Management</h4>
+        <p>Login or Sign up</p>
+        <div className={style.loginForm}>
+          <input type="email" value={logindet.usernameoremail} onChange={(e)=>handleChange(e.target.value, "usernameoremail")} placeholder="Email or username" ></input>
+          <input type="password" value={logindet.password} onChange={(e)=>handleChange(e.target.value, "password")} placeholder='Password'></input>
+          <button onClick={handleLogin}>Login</button>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <p>or</p>
+        <button onClick={handleSignup}>Sign Up</button>
+      </div>
     </div>
-  );
+  )
 }
+
+export default page

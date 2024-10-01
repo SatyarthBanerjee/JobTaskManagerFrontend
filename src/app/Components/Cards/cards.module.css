@@ -1,0 +1,99 @@
+.todocard{
+    display: flex;
+    flex-direction: column;
+width: 242px;
+padding: 15px;
+align-items: flex-start;
+align-content: flex-start;
+gap:  15px;
+flex-wrap: wrap;
+border-radius: 12px;
+background: var(--Board-Red, #F9DADA);
+cursor: pointer;
+}
+.titleandcheck{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.titleandcheck h4{
+    color: var(--Primary-Back, #1E1E1E);
+font-family: "SF Pro Display";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.inprogress{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+width: 242px;
+padding: 15px;
+align-items: flex-start;
+align-content: flex-start;
+gap: 6px 10px;
+flex-wrap: wrap;
+border-radius: 12px;
+background: var(--Board-Blue, #D6E6FD);
+cursor: pointer;
+
+}
+.inprogress h4{
+    color: var(--Primary-Back, #1E1E1E);
+/* font-family: "SF Pro Display"; */
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.completed{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+width: 242px;
+padding: 15px;
+align-items: flex-start;
+align-content: flex-start;
+gap: 6px 10px;
+flex-wrap: wrap;
+border-radius: 12px;
+background: var(--Board-Green, #E1FEE7);
+cursor: pointer;
+}
+.dialogbox{
+    position: absolute;
+    z-index: 999;
+    background-color: #F9DADA;
+    height: 55%;
+    width: 50%;
+    top:25%;
+    left:25%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    font-size: 15px;
+}
+.dialogboxheading{
+    display: flex;
+    justify-content: space-between;
+}
+.updatebtn{
+    width: 100px;
+    display: inline-flex;
+padding: 9px 18px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 5px;
+background: var(--Label-Red, #FF3C58);
+border-style: none;
+color: var(--Prime-White, #FEFEFE);
+/* font-family: "SF Pro Display"; */
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+cursor: pointer;
+}
